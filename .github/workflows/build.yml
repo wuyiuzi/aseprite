@@ -1,34 +1,19 @@
 name: build
-
 on: [push, pull_request]
-
 jobs:
-
-  build:
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-
-      fail-fast: false
-
-      matrix:
-
-        os: [windows-latest]
-
-        build_type: [Release]
-
-        enable_ui: [on]
-
-        include:
-
-          - os: windows-latest
-
-            build_type: Release
-
-            enable_ui: on
-
-    steps:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+        build_type: [Release]
+        enable_ui: [on]
+        include:
+          - os: windows-latest
+            build_type: Release
+            enable_ui: on
+steps:
 
     - uses: actions/checkout@v3
 
@@ -122,4 +107,4 @@ jobs:
 
           D:/a/aseprite/aseprite/build/bin/data
 
-          D:/a/aseprite/aseprite/build/bin/aseprite.exe 
+          D:/a/aseprite/aseprite/build/bin/aseprite.exe
